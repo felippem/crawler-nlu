@@ -1,0 +1,44 @@
+{
+  "name": "crawler-nlu",
+  "version": "1.0.0",
+  "description": "Simples crawler para rastrear endereços da web, extrair e interpretar o conteúdo das páginas através da API do IBM Watson.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "env-cmd -f ./.env.development.json nodemon index.js -w *.js -w *.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felippem/crawler-nlu.git"
+  },
+  "keywords": [
+    "crawler",
+    "nlu",
+    "watson"
+  ],
+  "author": "Felippe Medeiros",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/felippem/crawler-nlu/issues"
+  },
+  "homepage": "https://github.com/felippem/crawler-nlu#readme",
+  "dependencies": {
+    "@std/esm": "^0.26.0",
+    "htmlparser2": "^4.0.0",
+    "ibm-watson": "^4.4.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.0.1",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "nodemon": "^1.19.2"
+  }
+}

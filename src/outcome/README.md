@@ -1,0 +1,1 @@
+# Este diretório é necessário para o arquivamento do resultado da execução do crawler.

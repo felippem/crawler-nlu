@@ -1,0 +1,25 @@
+[
+  {
+    "title": "crawler-my-domain",
+    "resultPath": "./outcome/result-domain",
+    "routes": [
+      {
+        "uri": "https://domain.com",
+        "options": {
+          "encoding": "utf-8",
+          "method": "POST",
+          "formData": {
+            "action": "list",
+            "page": 1,
+            "string": ""
+          },
+          "timeout": 30000
+        },
+        "nluOptions": {
+          "clean": false,
+          "xpath": "//article[contains(@class, 'post')]"
+        }
+      }
+    ]
+  }
+]
