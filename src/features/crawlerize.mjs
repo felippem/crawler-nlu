@@ -42,16 +42,20 @@ export default class Crawlerize {
   async executeWork(item, resultPath) {
     await request(item.uri, item.options)
       .then((contentBody) => {
-        this.crawlerParser.extractLinkCollection(contentBody).then((links) => {
-          links.forEach((value) => {
-            this.crawlerTranslator
-              .discover(value, item.nluOptions)
-              .then((nlu) => {
-                const fileName = `${resultPath}/${nlu.metadata.title.replace(/[^\w]/gi, '-')}.json`;
-                infra.saveResultProcess(fileName, nlu);
-              });
+        this.crawlerParser.extractLinkCollection(contentBody)
+          .then(async (links) => {
+            for (let x = 0; x < links.length; x += 1) {
+              await this.crawlerTranslator
+                .discover(links[x], item.nluOptions)
+                .then(nlu => {
+                  if (nlu && nlu.metadata)
+                    infra.saveResultProcess(`${resultPath}/${nlu.metadata.title.replace(/[^\w]/gi, '-')}.json`, nlu);
+                })
+                .catch(err => {
+                  console.error(err)
+                })
+            }
           });
-        });
       })
       .catch((err) => console.error(err));
   }

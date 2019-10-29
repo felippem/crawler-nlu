@@ -14,7 +14,7 @@ export default class InfraUtil {
           else console.error(err);
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }
 
   /**
