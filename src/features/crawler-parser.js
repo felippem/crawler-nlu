@@ -1,4 +1,4 @@
-import htmlparser2 from 'htmlparser2';
+import { Parser } from 'htmlparser2';
 
 /**
  * A responsabilidade deste é de interpretar um determinado conteúdo
@@ -21,7 +21,7 @@ export default class CrawlerParser {
         },
       };
 
-      const parser = new htmlparser2.Parser({
+      const parser = new Parser({
         onopentag(name, attribs) {
           switch (name) {
             case 'a':

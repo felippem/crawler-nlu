@@ -28,13 +28,15 @@ O "crawler-nlu" pode ajudá-lo a extrair e transformar o conteúdo de páginas d
 
 ## Stack
 - Nodejs 10+
-- @std/esm
+- esm
 - htmlparser2
 - ibm-watson
 - request-promise-native
 - env-cmd
 - eslint
 - nodemon
+- mocha
+- chai
 
 ## Getting Started
 Acesse o console da IBM Cloud e crie sua própria instância do serviço <a href="https://cloud.ibm.com/catalog/services/natural-language-understanding">"Natural Language Understanding"</a>;
@@ -48,7 +50,7 @@ Faça o clone do projeto para um diretório local:
 > ```https://github.com/felippem/crawler-nlu.git```
 
 Instale as dependências do projeto:
-> ```> npm i```
+> ```npm i```
 
 Crie um novo arquivo `.env.development.json` na raiz do projeto, com o seguinte conteúdo (lembre-se de substituir a chave "WATSON_API_KEY" com o valor definitivo):
 ```json
@@ -93,3 +95,7 @@ Por fim, execute no seu terminal:
 > ```npm run dev```
 
 Após a execução, verifique o resultado de saída no diretório `./outcome` e seja feliz.
+
+Para executar os testes de unidade em ambiente de desenvolvimento, execute:
+
+> ```npm test```

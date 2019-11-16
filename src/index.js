@@ -4,5 +4,5 @@
  * juntamentoe com o padrão CommonJS do Node.
  * Docs: https://github.com/standard-things/esm
  */
-require = require('@std/esm')(module);
-module.exports = require('./main.mjs').default;
+require = require('esm')(module);
+module.exports = require('./main.js').default;
